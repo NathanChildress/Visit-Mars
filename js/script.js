@@ -1,16 +1,47 @@
 const marsWeatherURL = `https://api.nasa.gov/insight_weather/?api_key=${config.MARS_WEATHER_API_KEY}&feedtype=json&ver=1.0`;
 const spaceXURL = "";
 // const launchAPI = "https://launchlibrary.net/1.3/launch/next/5"
-const launchAPI = `https://sfhu2ayqth.execute-api.us-east-1.amazonaws.com/test/getapilambda`
+const launchAPI = `https://bxfc45tfvh.execute-api.us-east-1.amazonaws.com/Beta1/launches`
 
-let theseLaunches, forecastDebug, marsWeather;
-
-
-let $roverTweet = roverTweets.$insight
-$roverTweet.appendTo($("#twitterfeed"));
+let theseLaunches, launchDebug, marsWeather, $roverTweet;
 
 
 
+
+//Event Listeners
+
+
+//Let our visitor select which martian celebrity to see on twitter
+$('#twitterfeed').on('click', 'button', function() {
+    let $item = $(this)
+    $('.rover-tweets').remove()
+    console.log(String($item[0].id))
+
+    //attempted to use switch case to handle this but still uncertain about matchig strings
+    // switch(String($item[0].id)){
+    //     case "spirit":$roverTweet = roverTweets.$spirit;
+            
+    //     case "curiosity": $roverTweet = roverTweets.$curiosity;
+            
+    //     case "insight": $roverTweet = roverTweets.$insight;
+    //}
+    if ($item[0].id == "perseverance"){
+        $roverTweet = roverTweets.$perseverance;
+    } else if($item[0].id == "curiosity") {
+        $roverTweet = roverTweets.$curiosity;
+    } else if($item[0].id == "insight") {
+        $roverTweet = roverTweets.$insight;
+    }
+    let $tweetDiv = $('<div class="rover-tweets"></div');
+    $tweetDiv.appendTo($('#twitterfeed'));
+    $roverTweet.appendTo($('.rover-tweets'));
+
+})
+
+
+
+
+//Render Functions can go Here
 
 function renderLaunches (launchList) {
     theseLaunches = launchList
@@ -21,7 +52,7 @@ function renderLaunches (launchList) {
 //We want to render some cards to show the upcoming launches. 
 //TODO: create a rocket graphic for each card.
 function renderLaunchCard (launch) {
-    forecastDebug = launch
+    launchDebug = launch
 //we can use bootstrap to handle creating the cards for us with this basic template:
 let $myCard = $(`<div class="card" style="width: 18rem;">
     <img src="images/Rocket-ship-Clip-Art.svg" class="card-img-top" alt="...">
@@ -39,8 +70,9 @@ let $myCol =$(".launchList");
 $myCard.appendTo($myCol);
 }
 
+//The beginnings of our current conditions card.
 function renderMarsWeather (marsWeather) {
-    let ourSol = marsWeather.sol_keys
+    let ourSol = marsWeather.sol_keys[0]
     $("#temperature").html(marsWeather[ourSol].AT.av);
     $("#windspeed").html(marsWeather[ourSol].HWS.av);
     $("#season").html(marsWeather[ourSol].Season);
@@ -49,7 +81,7 @@ function renderMarsWeather (marsWeather) {
 
 
 //Make our DATA calls down here
-//Upcoming lauches
+//Upcoming launches
 $.ajax({
     url: `${launchAPI}`
 }).then (

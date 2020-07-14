@@ -20,13 +20,12 @@
     <script defer src="./js/script.js"></script>
 </head>
 <body>
+    <div class="container">
     <nav>
-        
+        <h1 >Visit Mars</h1>
     </nav>
-    <h1 >Visit Mars</h1>
-    <!-- <img src="images/Rocket-ship-Clip-Art.svg" alt="Rocket-ship-Clip-Art"> -->
-    <main>
-        
+    
+    <div class="space">
         <div class="card weather-card" id="marsWeather">
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -36,9 +35,21 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <!-- <img src="images/Rocket-ship-Clip-Art.svg" alt="Rocket-ship-Clip-Art"> -->
+    <main>
+        
+
         <div class="launchList"></div>
-        <div id="twitterfeed"></div>
+        <div id="twitterfeed">
+            <div>Local Celebrities</div>
+            <div><button class="btn" id="perseverance">perseverance</button>
+                <button class="btn" id="curiosity">curiosity</button>
+                <button class="btn" id="insight">insight</button>
+            </div>
+        </div>
     </main>
+</div>
 </body>
 
 </html>

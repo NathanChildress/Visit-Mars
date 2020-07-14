@@ -1,3 +1,8 @@
+:root {
+    --bg-color-sky:rgb(5, 6, 70);
+    --color-soil: #dd7016;
+  }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,19 +11,12 @@
 body {
     min-height: 100vh;
     margin: 0;
-    background-color: rgb(5, 6, 70);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px, 80px, auto;
-    grid-template-areas: 
-    "hdr"
-    "content"
-    "side"
-    "ftr";
+    background-color: var(--bg-color-sky);
+    color: var(--color-soil);
 }
 
 footer {
-    grid-area: ftr;
+    grid-area: "ftr";
     background-color: #dd16dd;
   }
 
@@ -26,9 +24,14 @@ aside {
     grid-area: side;
     background-color: rgb(29, 182, 15);
   }
+main {
+    grid-area: "content";
+    background-color:var(--color-soil);
+    color: var(--bg-color-sky);
+}
 
 h1 {
-    color: #dd7016;
+    color: var(--color-soil);
 }
 
 .launchList {
@@ -36,6 +39,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     margin: auto;
     color: black;
 
