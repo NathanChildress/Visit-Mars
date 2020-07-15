@@ -14,6 +14,9 @@ let theseLaunches, launchDebug, marsWeather, $roverTweet;
 //Let our visitor select which martian celebrity to see on twitter
 $('#twitterfeed').on('click', 'button', function() {
     let $item = $(this)
+
+    //This does not works as expected. I need to grab the actual widget object
+    //to properly remove this.
     $('.rover-tweets').remove()
     console.log(String($item[0].id))
 
@@ -32,9 +35,9 @@ $('#twitterfeed').on('click', 'button', function() {
     } else if($item[0].id == "insight") {
         $roverTweet = roverTweets.$insight;
     }
-    let $tweetDiv = $('<div class="rover-tweets"></div');
-    $tweetDiv.appendTo($('#twitterfeed'));
-    $roverTweet.appendTo($('.rover-tweets'));
+    // let $tweetDiv = $('<div class="rover-tweets"></div');
+    // $tweetDiv.appendTo($('#twitterfeed'));
+    $roverTweet.appendTo($('#twitterfeed'));
 
 })
 

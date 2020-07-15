@@ -14,7 +14,7 @@
     
     <!-- local CSS -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <!-- local JS -->
     <script src="js/config.js"></script>
     <script defer src="./js/script.js"></script>
@@ -28,20 +28,20 @@
     <div class="space">
         <div class="card weather-card" id="marsWeather">
             <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="temperature"></li>
-                    <li class="list-group-item" id="windspeed"></li>
-                    <li class="list-group-item" id="season"></li>
-                </ul>
+                <table class="table">
+                    <tr><td>temperature: </td><td id="temperature"></td></tr>
+                    <tr><td>windspeed: </td><td id="windspeed"></td></tr>
+                    <tr><td>season: </td><td id="season"></td></tr>
+                </table>
             </div>
         </div>
     </div>
     <!-- <img src="images/Rocket-ship-Clip-Art.svg" alt="Rocket-ship-Clip-Art"> -->
-    <main>
+    <main class="container">
         
 
-        <div class="launchList"></div>
-        <div id="twitterfeed">
+        <div class="launchList col-md"></div>
+        <div id="twitterfeed" class="col-md">
             <div>Local Celebrities</div>
             <div><button class="btn" id="perseverance">perseverance</button>
                 <button class="btn" id="curiosity">curiosity</button>
