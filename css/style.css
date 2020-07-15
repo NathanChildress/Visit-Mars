@@ -15,17 +15,8 @@ body {
     color: var(--color-soil);
 }
 
-footer {
-    grid-area: "ftr";
-    background-color: #dd16dd;
-  }
-
-aside {
-    grid-area: side;
-    background-color: rgb(29, 182, 15);
-  }
 main {
-    grid-area: "content";
+
     background-color:var(--color-soil);
     color: var(--bg-color-sky);
 }
@@ -34,24 +25,44 @@ h1 {
     color: var(--color-soil);
 }
 
+.space {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
 .launchList {
+    grid-row: 1/3;
+    grid-column: 2/3;
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
-    margin: auto;
-    color: black;
+    /* margin: auto; */
+    /* color: black; */
+
+}
+
+.the-grid {
+    display: grid;
+    /* grid-template-columns: 1fr 30% 30%; */
+    grid-template-rows: 12rem 7fr;
+    padding: 2rem;
+
 
 }
 
 #twitterfeed {
-    
+    background-color: var(--color-soil);
+    grid-row: 2/3;
+    grid-column: 1/2;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: auto;
+    /* justify-content: center; */
+    /* margin: auto; */
 }
 
 .card-img-top {
