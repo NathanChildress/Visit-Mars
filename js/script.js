@@ -3,7 +3,7 @@ const spaceXURL = "";
 // const launchAPI = "https://launchlibrary.net/1.3/launch/next/5"
 const launchAPI = `https://bxfc45tfvh.execute-api.us-east-1.amazonaws.com/Beta1/launches`
 
-let theseLaunches, launchDebug, marsWeather, $roverTweet,debugThis, keysplit;
+let theseLaunches, launchDebug, marsWeather, $roverTweet, keysplit;
 
 
 
@@ -12,22 +12,22 @@ let theseLaunches, launchDebug, marsWeather, $roverTweet,debugThis, keysplit;
 
 //rotate our rocket on click
 $('.launchList').on('click', 'img', function() {
-    console.log(this);
+    // console.log(this);
     $(this).css({
       "transform" : "rotate(0.125turn)",
       "transition-duration" : "1.5s",
     })
 
-    debugThis = $(this)
-    launchDebug = theseLaunches.launches[parseInt(debugThis[0].id)]
-    $('.modal-body').html(renderLaunchModal(theseLaunches.launches[parseInt(debugThis[0].id)]))
-    $('#launchModal').attr("class", `modal fade ${debugThis[0].id}`);
+    const launchThis = $(this)
+    // launchDebug = theseLaunches.launches[parseInt(launchThis[0].id)]
+    $('.modal-body').html(renderLaunchModal(theseLaunches.launches[parseInt(launchThis[0].id)]))
+    $('#launchModal').attr("class", `modal fade ${launchThis[0].id}`);
     $('#launchModal').modal({keyboard: true})
 });
 
 $("#launchModal").on("hidden.bs.modal", function () {
     // put your default event here
-    console.log($(this)[0].className)
+    // console.log($(this)[0].className)
     keySplit = $(this)[0].className
     keyArray = keySplit.split(" ")
     $(`#${keyArray[2]}`).css({
@@ -51,7 +51,7 @@ $('#twitterfeed').on('click', 'button', function() {
     $('#insight-tweet').css({
         "display":"none"
     })
-    console.log(String($item[0].id))
+    // console.log(String($item[0].id))
     $(`#${$item[0].id}-tweet`).css({
         "display": "flex",
         "flex-direction" : "column",
@@ -79,8 +79,8 @@ $('#twitterfeed').on('click', 'button', function() {
 })
 
 $(window).resize(function () {
-    console.log((document.getElementsByTagName('body')[0].clientWidth)/3)
-    renderSky((document.getElementsByTagName('body')[0].clientWidth)/3)
+    console.log((document.getElementsByTagName('body')[0].clientWidth)/2)
+    renderSky((document.getElementsByTagName('body')[0].clientWidth)/2)
 })
 
 
@@ -187,4 +187,4 @@ $.ajax({
     
 )
 
-renderSky((document.getElementsByTagName('body')[0].clientWidth)/3);
+renderSky((document.getElementsByTagName('body')[0].clientWidth)/2);

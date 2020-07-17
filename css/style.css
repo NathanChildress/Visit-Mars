@@ -28,6 +28,11 @@ h1 {
     font-family: 'Space Mono', monospace;
 }
 
+h2 {
+    color: var(--bg-color-sky);
+    font-family: 'Space Mono', monospace;
+}
+
 .space {
     grid-row: 2/4;
     grid-column: 1/2;
@@ -44,6 +49,7 @@ h1 {
     grid-row: 2/4;
     grid-column: 2/3;
     margin-left: 2rem;
+    color: var(--bg-color-sky);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,6 +70,7 @@ h1 {
 
 #twitterfeed {
     background-color: var(--color-soil);
+    color: var(--bg-color-sky);
     grid-row: 3/4;
     grid-column: 1/2;
 
