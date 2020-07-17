@@ -78,6 +78,11 @@ $('#twitterfeed').on('click', 'button', function() {
 
 })
 
+$(window).resize(function () {
+    console.log((document.getElementsByTagName('body')[0].clientWidth)/3)
+    renderSky((document.getElementsByTagName('body')[0].clientWidth)/3)
+})
+
 
 
 
@@ -133,9 +138,12 @@ function renderMarsWeather (marsWeather) {
 }
 
 function renderSky(stars) {
+    const canva = document.getElementById('canvas');
+    canva.width = document.getElementsByTagName('body')[0].clientWidth;
+    canva.height = (document.getElementsByTagName('body')[0].clientHeight/2);
+    const ctx = canva.getContext('2d');
     for (let i = 0; i < stars; i++){
-        const canva = document.getElementById('canvas');
-        const ctx = canva.getContext('2d');
+        
         x = Math.random() * document.body.offsetWidth;
         y = Math.random() * document.body.offsetHeight;
         ctx.fillStyle = "white";
@@ -179,4 +187,4 @@ $.ajax({
     
 )
 
-renderSky(200);
+renderSky((document.getElementsByTagName('body')[0].clientWidth)/3);

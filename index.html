@@ -22,6 +22,7 @@
     <script defer src="./js/script.js"></script>
 </head>
 <body class="the-grid">
+    <canvas id="canvas"></canvas>
     <header>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -41,7 +42,7 @@
     <svg viewBox="0 0 100 100" class="phobos">
         <circle cx="13" cy="25"" r="10"/>
     </svg>
-    <canvas id="canvas"></canvas>
+    
     <div class="space">
         <div class="card weather-card" id="marsWeather">
             <div class="card-body">
@@ -54,9 +55,9 @@
         </div>
     </div>
     <!-- <img src="images/Rocket-ship-Clip-Art.svg" alt="Rocket-ship-Clip-Art"> -->
-      <div class="launchList"></div>
-      <div id="soil"></div>
-        <div id="twitterfeed">
+    <div class="launchList"></div>
+    <div id="soil"></div>
+    <div id="twitterfeed">
             <div>Local Celebrities</div>
             <div>
                 <button class="btn" id="perseverance">perseverance</button>
@@ -72,26 +73,26 @@
             <div id="insight-tweet" class="rover-tweets">
                 <a class="twitter-timeline rover-tweets" data-width="300" data-theme="light" href="https://twitter.com/NASAInSight?ref_src=twsrc%5Etfw">Tweets by NASAInSight</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-        </div>
-        <!-- Modal -->
-<div class="modal fade" id="launchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Launch Details</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Reserve my Seat!</button>
-        </div>
-      </div>
     </div>
-  </div>
-
+        <!-- Modal -->
+    <div class="modal fade" id="launchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Launch Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+            
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Reserve my Seat!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
