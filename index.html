@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit Mars!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -11,7 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-    
+    <!--adding Bootstrap plugins here-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <!-- local CSS -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -20,11 +22,26 @@
     <script defer src="./js/script.js"></script>
 </head>
 <body class="the-grid">
-    
-
-            <h1 >Visit Mars</h1>
-
-    
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h1>Visit Mars</h1>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li><a href="#">Page 1</a></li>
+                  </ul>
+            </div>
+        </nav>
+       
+    </header>
+    <svg viewBox="0 0 100 100" class="deimos">
+        <circle cx="10" cy="15"" r="10"/>
+    </svg>
+    <svg viewBox="0 0 100 100" class="phobos">
+        <circle cx="13" cy="25"" r="10"/>
+    </svg>
+    <canvas id="canvas"></canvas>
     <div class="space">
         <div class="card weather-card" id="marsWeather">
             <div class="card-body">
@@ -38,6 +55,7 @@
     </div>
     <!-- <img src="images/Rocket-ship-Clip-Art.svg" alt="Rocket-ship-Clip-Art"> -->
       <div class="launchList"></div>
+      <div id="soil"></div>
         <div id="twitterfeed">
             <div>Local Celebrities</div>
             <div>
@@ -45,8 +63,35 @@
                 <button class="btn" id="curiosity">curiosity</button>
                 <button class="btn" id="insight">insight</button>
             </div>
+            <div id="perseverance-tweet" class="rover-tweets">
+                <a class="twitter-timeline rover-tweets" data-width="300" data-theme="light" href="https://twitter.com/NASAPersevere?ref_src=twsrc%5Etfw">Tweets by NASAPersevere</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div id="curiosity-tweet" class="rover-tweets">
+                <a class="twitter-timeline rover-tweets" data-width="300" data-theme="light" href="https://twitter.com/MarsCuriosity?ref_src=twsrc%5Etfw">Tweets by MarsCuriosity</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div id="insight-tweet" class="rover-tweets">
+                <a class="twitter-timeline rover-tweets" data-width="300" data-theme="light" href="https://twitter.com/NASAInSight?ref_src=twsrc%5Etfw">Tweets by NASAInSight</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
         </div>
-
-</body>
+        <!-- Modal -->
+<div class="modal fade" id="launchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Launch Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Reserve my Seat!</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </html>
