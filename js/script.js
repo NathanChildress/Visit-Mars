@@ -1,6 +1,5 @@
 const marsWeatherURL = `https://bxfc45tfvh.execute-api.us-east-1.amazonaws.com/Beta1/marsinsight/`;
 const spaceXURL = "";
-// const launchAPI = "https://launchlibrary.net/1.3/launch/next/5"
 const launchAPI = `https://bxfc45tfvh.execute-api.us-east-1.amazonaws.com/Beta1/launches`
 
 let theseLaunches, launchDebug, marsWeather, $roverTweet, keysplit;
@@ -35,6 +34,24 @@ $("#launchModal").on("hidden.bs.modal", function () {
         "transition-duration" : "1.5s",
     })
 });
+
+$('#reservation-button').on('click', 'button', function() {
+    // console.log(this);
+    //Lets set their reservation in local storage here.
+    localStorage.setItem('launchReserve', JSON.stringify(theseLaunches.launches[parseInt(launchThis[0].id)]))
+    
+    $('#launchModal').modal('hide')
+});
+
+$('#reserve').on('click', 'button', function() {
+    console.log(this);
+    //Lets set their reservation in local storage here.
+    let myReservation = (localStorage.getItem('launchReserve', JSON.stringify(theseLaunches.launches[parseInt(launchThis[0].id)])))
+    if (myReservation) {$('.modal-body').html(renderLaunchModal(myReservation))}
+    $('#launchModal').attr("class", `modal fade ${launchThis[0].id}`);
+    $('#launchModal').modal({keyboard: true})
+});
+
 
 //Let our visitor select which martian celebrity to see on twitter
 $('#twitterfeed').on('click', 'button', function() {

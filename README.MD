@@ -1,6 +1,8 @@
 # Visit-Mars 
 > This is just a fun little site that represents a martian lobby enticing Terrans to come and visit. While curious about us, they don't quite trust us to host any of their secret martian servers locally at the embassy. So they're attempting to send their data requests as generics back to martian lambda space to be sanitized then processed to keep their martian communications safe from terran snooping.
 
+# Demo
+You can see it at work [here].(https://nathanchildress.github.io/Visit-Mars/)
 
 # Technology used
 - HTML
