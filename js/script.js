@@ -1,4 +1,4 @@
-const marsWeatherURL = `https://api.nasa.gov/insight_weather/?api_key=${config.MARS_WEATHER_API_KEY}&feedtype=json&ver=1.0`;
+const marsWeatherURL = `https://bxfc45tfvh.execute-api.us-east-1.amazonaws.com/Beta1/marsinsight/`;
 const spaceXURL = "";
 // const launchAPI = "https://launchlibrary.net/1.3/launch/next/5"
 const launchAPI = `https://bxfc45tfvh.execute-api.us-east-1.amazonaws.com/Beta1/launches`
