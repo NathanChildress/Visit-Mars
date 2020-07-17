@@ -23,8 +23,9 @@ In order to make the AWS API proxy work. [There are a few steps](https://docs.aw
 
 
 # Future Goals
-Develop a booking ticket where visitors can click a 'reserve spot' on one of the upcoming launches. ~~Developing some little svg animations on the ticket when reserved to offer some whimsy. The local celebrities twitter column should be collapsible when another celebrity is selected. This is probably more doable using the twitter API and loading the data myself than attempting to maintain space with the twitter widget.~~
+Allow users to find their reservation properly through the menu
+~~ Develop a booking ticket where visitors can click a 'reserve spot' on one of the upcoming launches. Developing some little svg animations on the ticket when reserved to offer some whimsy. The local celebrities twitter column should be collapsible when another celebrity is selected. This is probably more doable using the twitter API and loading the data myself than attempting to maintain space with the twitter widget.~~
 
 # Unsolved Problems
-Calling a modal button outside of the Bootstrap method.
+Calling a modal button outside of the Bootstrap method from a Bootstrap menu.
 
