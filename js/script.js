@@ -35,21 +35,26 @@ $("#launchModal").on("hidden.bs.modal", function () {
     })
 });
 
-$('#reserve').on('click', 'button', function() {
+$('.modal').on('click', '#reserve', function() {
     // console.log(this);
+    // launchDebug = $('#launchModal')
+    keySplit = $('#launchModal')[0].className
+    keyArray = keySplit.split(" ")
     //Lets set their reservation in local storage here.
-    localStorage.setItem('launchReserve', JSON.stringify(theseLaunches.launches[parseInt(launchThis[0].id)]))
+    localStorage.setItem('launchReserve', JSON.stringify(theseLaunches.launches[parseInt(keyArray[2])]))
     
     $('#launchModal').modal('hide')
 });
 
-$('#reservation').on('click', 'button', function() {
+$('.nav').on('click', '#reservation', function() {
     console.log(this);
+    const launchThis = $(this)
     //Lets set their reservation in local storage here.
-    let myReservation = (localStorage.getItem('launchReserve', JSON.stringify(theseLaunches.launches[parseInt(launchThis[0].id)])))
+    let myReservation = (localStorage.getItem('launchReserve' ))
+    launchDebug = myReservation
     if (myReservation) {$('.modal-body').html(renderLaunchModal(myReservation))}
-    $('#launchModal').attr("class", `modal fade ${launchThis[0].id}`);
-    $('#launchModal').modal({keyboard: true})
+    $('#revervationModal').attr("class", `modal fade ${launchThis[0].id}`);
+    $('#revervationModal').modal({keyboard: true})
 });
 
 
@@ -205,3 +210,7 @@ $.ajax({
 )
 
 renderSky((document.getElementsByTagName('body')[0].clientWidth)/2);
+let myReservation = JSON.parse((localStorage.getItem('launchReserve' )))
+launchDebug = myReservation
+if (myReservation) {$('#reservation-body').html(renderLaunchModal(myReservation))
+    $('#revervationModal').modal({keyboard: true})}
