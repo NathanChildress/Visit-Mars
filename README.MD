@@ -17,7 +17,7 @@ You can see it at work [here].(https://nathanchildress.github.io/Visit-Mars/)
 For now, they've created a seperate config.js file to store their martian keys while they setup their tourism agency. To all future martian embassies being deployed make sure you place your martian API keys there.
 
 # AWS API gateway Setup
-In order to make the AWS API proxy work. There are a few steps. CORS errors are pretty easy to run into trying to set things up. The best advice I can give is that when creating your AWS API Gateway, you need to create your 200 response headers before deploying your api to gateway. Using the CORS enable option or attempting to modify an existing API gateway won't necessarily get it working. [Test-Cors](http://client.cors-api.appspot.com/client) is a great site to test your gateway while you're setting up.
+In order to make the AWS API proxy work. [There are a few steps](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-api-as-simple-proxy-for-lambda.html). CORS errors are pretty easy to run into trying to set things up. The best advice I can give is that when creating your AWS API Gateway, you need to create your 200 response headers before deploying your api to gateway. Using the CORS enable option or attempting to modify an existing API gateway won't necessarily get it working. [Test-Cors](http://client.cors-api.appspot.com/client) is a great site to test your gateway while you're setting up.
 
 
 # Future Goals
