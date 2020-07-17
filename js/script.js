@@ -79,8 +79,8 @@ $('#twitterfeed').on('click', 'button', function() {
 })
 
 $(window).resize(function () {
-    console.log((document.getElementsByTagName('body')[0].clientWidth)/2)
-    renderSky((document.getElementsByTagName('body')[0].clientWidth)/2)
+    // console.log((document.getElementsByTagName('body')[0].clientWidth)/2)
+    renderSky((document.getElementsByTagName('body')[0].clientWidth))
 })
 
 
