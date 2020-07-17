@@ -35,7 +35,7 @@ $("#launchModal").on("hidden.bs.modal", function () {
     })
 });
 
-$('#reservation-button').on('click', 'button', function() {
+$('#reserve').on('click', 'button', function() {
     // console.log(this);
     //Lets set their reservation in local storage here.
     localStorage.setItem('launchReserve', JSON.stringify(theseLaunches.launches[parseInt(launchThis[0].id)]))
@@ -43,7 +43,7 @@ $('#reservation-button').on('click', 'button', function() {
     $('#launchModal').modal('hide')
 });
 
-$('#reserve').on('click', 'button', function() {
+$('#reservation').on('click', 'button', function() {
     console.log(this);
     //Lets set their reservation in local storage here.
     let myReservation = (localStorage.getItem('launchReserve', JSON.stringify(theseLaunches.launches[parseInt(launchThis[0].id)])))

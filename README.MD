@@ -2,7 +2,9 @@
 > This is just a fun little site that represents a martian lobby enticing Terrans to come and visit. While curious about us, they don't quite trust us to host any of their secret martian servers locally at the embassy. So they're attempting to send their data requests as generics back to martian lambda space to be sanitized then processed to keep their martian communications safe from terran snooping.
 
 # Demo
-You can see it at work [here].(https://nathanchildress.github.io/Visit-Mars/)
+You can see it at work [here](https://nathanchildress.github.io/Visit-Mars/).
+![WireFrame](./images/Visit-Mars-WireFrame.png)
+![WireFrame](./images/screenshot.png)
 
 # Technology used
 - HTML
@@ -21,5 +23,8 @@ In order to make the AWS API proxy work. [There are a few steps](https://docs.aw
 
 
 # Future Goals
-Develop a booking ticket where visitors can click a 'reserve spot' on one of the upcoming launches. Developing some little svg animations on the ticket when reserved to offer some whimsy. The local celebrities twitter column should be collapsible when another celebrity is selected. This is probably more doable using the twitter API and loading the data myself than attempting to maintain space with the twitter widget.
+Develop a booking ticket where visitors can click a 'reserve spot' on one of the upcoming launches. ~~Developing some little svg animations on the ticket when reserved to offer some whimsy. The local celebrities twitter column should be collapsible when another celebrity is selected. This is probably more doable using the twitter API and loading the data myself than attempting to maintain space with the twitter widget.~~
+
+# Unsolved Problems
+Calling a modal button outside of the Bootstrap method.
 
